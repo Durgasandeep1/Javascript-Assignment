@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol id="swagkid"></ol>
+
+    <script>
+        var students = [
+            {
+                "firstname": "praveen",
+                "age": 36,
+                "subjects": ['angular', 'nodejs', 'reactjs', 'java']
+            },
+            {
+                "firstname": "srikanth",
+                "age": 32,
+                "subjects": ['react', 'mongodb']
+            },
+            {
+                "firstname": "pradeep",
+                "age": 21,
+                "subjects": ['express', 'mongoose', 'python']
+            }
+        ]
+        var s = document.getElementById("swagkid")
+        for (var i = 0; i < students.length; i++) {
+            var li = document.createElement("li")
+            li.innerHTML = students[i].firstname;
+
+            var newol = document.createElement('ol');
+            for (var j = 0; j < students[i].subjects.length; j++) {
+                var newli = document.createElement('li');
+                newli.innerHTML = students[i].subjects[j];
+                newol.appendChild(newli);
+            }
+
+            li.appendChild(newol);
+            s.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>

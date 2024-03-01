@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>India :<span id="a"></span><span id="k"></span></h1>
+    <button onclick="ininc()">Score Added</button>
+
+    <h1>Pak :<span id="b"></span><span id="l"></span></h1>
+    <button onclick="pakinc()">Score Added</button>
+
+    <button onclick="win()">Win Batch</button>
+    <h1 id="result"></h1>
+
+    <script>
+        var a = 0;
+        var b = 0;
+        document.getElementById('a').innerHTML = a
+        document.getElementById('b').innerHTML = b
+
+        function ininc() {
+            a++
+            document.getElementById('a').innerHTML = a
+            document.getElementById('k').innerHTML = "➕"
+            document.getElementById('l').innerHTML = ""
+
+        }
+        function pakinc() {
+            b++
+            document.getElementById('b').innerHTML = b
+            document.getElementById('l').innerHTML = "➕"
+            document.getElementById('k').innerHTML = ""
+
+        }
+        function win() {
+            var x = document.getElementById('a').innerHTML = a
+            var x = document.getElementById('b').innerHTML = b
+
+            if(a > b) {
+                var result = document.getElementById('result').textContent = "INDIA WINNER 🔥❤️‍🔥🍾🎆"
+                
+
+            }
+            else if (a < b) {
+                var result = document.getElementById('result').textContent = "PAK WINNER 💦💦💦💦💦"
+
+            }
+            else {
+                var result = document.getElementById('result').textContent = "MATCH DRAW"
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

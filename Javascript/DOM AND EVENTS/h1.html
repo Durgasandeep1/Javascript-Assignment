@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="k">
+        <h1 id="">sandeep</h1>
+    </div>
+    <script>
+
+        var textpart = document.createElement("h1")
+        textpart.textContent = "Hello OM World"
+        console.log(textpart.innerHTML)
+        var b  = document.getElementById("k")
+        b.appendChild(textpart)
+        b.style.color="red"
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .imga {
+            /* text-align: center; */
+            width: 200px;
+        }
+        #imgdiv {
+            width: 100%;
+        }
+        div img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://wallpapercave.com/wp/wp1827530.jpg" alt="" onmouseover="a('https://wallpapercave.com/wp/wp1827530.jpg')" class="imga">
+    <img src="https://wallpapercave.com/wp/wp1827540.jpg" alt="" onmouseover="a('https://wallpapercave.com/wp/wp1827540.jpg')" class="imga">
+    <img src="https://wallpapercave.com/wp/wp1827563.jpg" alt="" onmouseover="a('https://wallpapercave.com/wp/wp1827563.jpg')" class="imga">
+    <div id="imgdiv"></div>
+    <script>
+        var accessimg = document.getElementById("imgdiv");
+
+        function a(image) {
+            accessimg.innerHTML = "";
+            var x = document.createElement("img");
+            x.src = image;
+            accessimg.appendChild(x);
+        }
+    </script>
+</body>
+</html>

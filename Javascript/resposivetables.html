@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inputtext">
+    <button onclick="addRow()">Add Row</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody"></tbody>
+    </table>
+    <script>
+        var tablebody = document.getElementById("tablebody");
+        
+        function addRow() {
+            var inputTextValue = document.getElementById("inputtext").value;
+            var values = inputTextValue.split(" ");
+
+            if (values.length === 3) {
+                var newRow = document.createElement("tr");
+
+                for (var i = 0; i < values.length; i++) {
+                    var newCell = document.createElement("td");
+                    newCell.textContent = values[i];
+                    newRow.appendChild(newCell);
+                }
+
+                tablebody.appendChild(newRow);
+            } else {
+                alert("Please enter all three values: Name Age Salary");
+            }
+        }
+    </script>
+</body>
+</html>

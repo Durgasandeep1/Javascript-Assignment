@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #backgroundContainer {
+            background-color: cornsilk;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body id="backgroundContainer">
+    <h1>Like and Dislike Button</h1>
+    <div>
+        <button onclick="x()">Like</button>
+        <span id="xvalue"></span>
+        <button onclick="y()">Dislike</button>
+        <span id="yvalue"></span>
+    </div>
+    <script>
+        var a = 0
+        var b = 0
+        var avalue = document.getElementById("xvalue").innerHTML = a
+        var bvalue = document.getElementById("yvalue").innerHTML = b
+        function x() {
+            avalue++
+        }
+    </script>
+</body>
+
+</html>

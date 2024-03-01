@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header {
+            display: flex;
+            flex-wrap: wrap;
+            background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+            justify-content: space-between;
+            padding: 80px;
+            margin-bottom: 10px;
+        }
+
+        #header h1 {
+            color: rgb(52, 101, 190);
+            font-size: 60px;
+        }
+
+        #header b {
+            border: 1px solid;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: rebeccapurple;
+        }
+
+        #header span {
+            border: 1px solid;
+            padding: 5px;
+            border-radius: 8px;
+            background-color: #94bbe9;
+        }
+
+        #header div {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        #controls {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        #addTodo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #controls input {
+            padding: 25px;
+            margin-top: 5px;
+            margin-right: 5px;
+            font-size: 20px;
+        }
+
+        #cardData {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        #cardData ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #cardData li {
+            border: 1px solid;
+            padding: 20px;
+            font-family: 20px;
+            margin: 10px;
+            box-sizing: border-box;
+            flex: 0 0 calc(33.33% - 40px);
+            position: relative; /* To make positioning of buttons relative to the list item */
+        }
+
+        .actions {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        #cardData button {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="margin-left: 290px; margin-right: 290px;">
+        <div id="header">
+            <h1>Edupoly Todolist</h1>
+            <div>
+                <b>All <span id="spanid"> 3</span></b>
+            </div>
+            <div>
+                <b>Completed <span>1</span></b>
+            </div>
+            <div>
+                <b>Pending <span>2</span></b>
+            </div>
+        </div>
+        <div id="addTodo">
+            <div id="controls">
+                <input type="text" id="title" placeholder="Enter Title">
+                <input type="text" id="description" placeholder="Enter description">
+            </div>
+            <div id="addBtn">
+                <button onclick="addTodo()">
+                    <h1>+</h1>
+                </button>
+            </div>
+        </div>
+        <h1 id="heading" style="font-size: 40px;">All Todos</h1>
+        <div id="cardData">
+            <ul id="todoListItems"></ul>
+        </div>
+    </div>
+
+    <script>
+        var todos = [];
+        var currentindex =0;
+        function addTodo() {
+            var datetime = new Date().toLocaleString();
+            var todoListItems = document.getElementById("todoListItems");
+            var title = document.getElementById("title").value;
+            var description = document.getElementById("description").value;
+
+            if (title === "") {
+                alert("Fill The forms");
+                return;
+            }
+
+            var todo = {
+                title: title,
+                description: description,
+                date: datetime,
+                completed: false
+            };
+
+            todos.push(todo);
+
+            displayTodos();
+        }
+
+        function deleteTodo(index) {
+            todos.splice(index, 1);
+            displayTodos();
+        }
+
+        function toggleDone(index) {
+            todos[index].completed = !todos[index].completed;
+            displayTodos();
+        }
+
+        function displayTodos() {
+            var todoListItems = document.getElementById("todoListItems");
+            todoListItems.innerHTML = "";
+
+            todos.forEach(function (todo, index) {
+                currentindex++
+                var createLi = document.createElement("li");
+
+                var x = document.createElement("input");
+                x.setAttribute("type", "checkbox");
+                x.checked = todo.completed;
+                x.onclick = function() {
+                    toggleDone(index);
+                };
+                createLi.appendChild(x);
+
+                var h1 = document.createElement("h1"); 
+                h1.innerHTML = todo.title + "        " + todo.description + "       " + todo.date;
+                createLi.appendChild(h1);
+
+                var doneButton = document.createElement("button");
+                doneButton.innerHTML = todo.completed ? "Undo" : "Done";
+                doneButton.onclick = function() {
+                    toggleDone(index);
+                };
+                createLi.appendChild(doneButton);
+
+                var delButton = document.createElement("button");
+                delButton.innerHTML = "Delete";
+                delButton.onclick = function() {
+                    deleteTodo(index);
+                };
+                createLi.appendChild(delButton);
+
+                createLi.classList.add("actions");
+
+                todoListItems.appendChild(createLi);
+            });
+        }
+        
+        document.getElementById("spanid").innerText = currentindex
+        console.log(allcount)
+
+    </script>
+</body>
+
+</html>

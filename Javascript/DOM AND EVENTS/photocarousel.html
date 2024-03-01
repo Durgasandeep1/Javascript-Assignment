@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 250px;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Carousel</h1>
+    <div id="imageContainer"></div>
+    <button onclick="prev()">Prev</button>
+    <button onclick="next()">Next</button>
+    <script>
+        var currentIndex = 0;
+        let imageContainer = document.getElementById("imageContainer");
+        let imageArray = ["https://wallpapercave.com/wp/wp1827563.jpg", "https://wallpapercave.com/wp/wp1827540.jpg", "https://wallpapercave.com/wp/wp1827530.jpg"];
+        function next() {
+            let imageElement = document.createElement("img");
+            imageElement.src = imageArray[currentIndex];
+            imageContainer.innerHTML = ''; 
+            imageContainer.appendChild(imageElement);
+            currentIndex = (currentIndex + 1) % imageArray.length;
+        }
+
+        function prev() {
+            currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+            let imageElement = document.createElement("img");
+            imageElement.src = imageArray[currentIndex];
+            imageContainer.innerHTML = ''; 
+            imageContainer.appendChild(imageElement);
+        }
+    </script>
+</body>
+</html>

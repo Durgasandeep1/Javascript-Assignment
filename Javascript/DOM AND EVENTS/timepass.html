@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Display</title>
+</head>
+
+<body>
+    <div id="imageContainer">
+
+    </div>
+
+    <script>
+        // Array of image URLs
+        var imageUrls = [            'https://drive.google.com/file/d/1-4qKCbxUY4q3SYPmMu51XcvDyA-t3TXe/view?usp=drivesdk ',
+            'https://example.com/image3.jpg',
+            // Add more image URLs as needed
+        ];
+
+        // Get the container element
+        var container = document.getElementById('imageContainer');
+
+        // Loop through the image URLs and create img elements
+        for (var i = 0; i < imageUrls.length; i++) {
+            var img = document.createElement('img');
+            img.src = imageUrls[i];
+            img.alt = 'Image ' + (i + 1); // Set alternative text for accessibility
+
+            // Optionally, you can set additional attributes or styles for each image
+
+            // Append the image to the container
+            container.appendChild(img);
+        }
+    </script>
+</body>
+
+</html>

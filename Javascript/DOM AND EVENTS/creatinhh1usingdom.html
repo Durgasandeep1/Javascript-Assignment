@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+
+<body>
+    <div id="classcontainer">
+        <input type="text"  id="a" >
+        <input type="text" id="b">
+        <button onclick="abc()">Calculator</button>
+        <p id="resultcame"></p>
+    </div>
+    <script>
+        function abc() {
+            var x = document.getElementById("a").value
+            var y = document.getElementById("b").value
+            var result = parseInt(x) + parseInt(y)
+            var kk = document.getElementById("resultcame").textContent = result
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="firstname">Firstname:</label>
+    <input type="text" name="" id="firstname"><br>
+    <label for="lastname">Lastname:</label>
+    <input type="text" name="" id="lastname"><br>
+    <label for="age">Age:</label>
+    <input type="text" name="" id="age"><br>
+    <label for="city">City:</label>
+    <input type="text" id="city"><br>
+
+    <button onclick="addPerson()">Add Person</button>
+    <button onclick="Updateadd()">UPDATE</button>
+
+    <div>
+        <table border="1px">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+            <tbody id="tablebody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        var arr = [];
+        var editidex;
+        function addPerson() {
+            var fName = document.getElementById("firstname").value;
+            var lName = document.getElementById("lastname").value;
+            var personAge = document.getElementById("age").value;
+            var city = document.getElementById("city").value;
+
+            var obj = {
+                firstName: fName,
+                lastName: lName,
+                age: personAge,
+                city: city
+            };
+
+            arr.push(obj);
+            createTable(arr);
+            Updatedadd(arr)
+            
+        }
+
+
+        function Updateadd(a) {
+            var updateobj = {
+                firstName: fName,
+                lastName: lName,
+                age: personAge,
+                city: city
+            };
+            ar[editidex] = updateobj
+            createTable(arr)
+        }
+
+        function createTable(a) {
+            var tbodytable = document.getElementById("tablebody");
+            tbodytable.innerHTML = "";
+
+            a.forEach(function (person, ind) {
+                var createTr = document.createElement("tr");
+
+                var createTd = document.createElement("td");
+                createTd.innerHTML = person.firstName;
+                createTr.appendChild(createTd);
+
+                var createTd2 = document.createElement("td");
+                createTd2.innerHTML = person.lastName;
+                createTr.appendChild(createTd2);
+
+                var createTd3 = document.createElement("td");
+                createTd3.innerHTML = person.age;
+                createTr.appendChild(createTd3);
+
+                var createTd4 = document.createElement("td");
+                createTd4.innerHTML = person.city;
+                createTr.appendChild(createTd4);
+
+                var createTd5 = document.createElement("td");
+                var deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "Delete";
+                deleteButton.onclick = function () {
+                    arr.splice(ind, 1);
+                    createTable(arr);
+                };
+                createTd5.appendChild(deleteButton);
+                createTr.appendChild(createTd5);
+
+                tbodytable.appendChild(createTr);
+
+
+
+                var editbutton = document.createElement("button")
+                editbutton.innerHTML = "Edit"
+                editidex = ind;
+                editbutton.onclick = function () {
+                    document.getElementById("firstname").value = person.firstName;
+                    document.getElementById("lastname").value = person.lastName
+                    document.getElementById("age").value = person.age
+                    document.getElementById("city").value = person.city
+                }
+
+                createTd5.appendChild(editbutton)
+            });
+        }
+    </script>
+</body>
+
+</html>

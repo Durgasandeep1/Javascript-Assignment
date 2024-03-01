@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #body {
+            text-align: center;
+            background-color: rgb(220, 93, 93);
+            justify-content: center;
+            background-size: cover;
+            opacity: 10px;
+            backdrop-filter: 10px;
+
+        }
+        ul {
+            margin-inline-start: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body">
+        <h1>Show Images Using URL</h1>
+        <p>Enter Names :<span><input type="text" name="" id="paragraphElement"></span></p>
+        <button onclick="abc()">ADD STUDENT NAME</button>
+    </div>
+    <div id="previewImageContainer"></div>
+    <script>
+
+        let previewImageContainer = document.getElementById("previewImageContainer")
+
+        function abc() {
+            let paragraphElement = document.getElementById("paragraphElement")
+            let orderedList = document.createElement("ul")
+            let unorderedList = document.createElement("li")
+            unorderedList.innerHTML = paragraphElement.value
+            orderedList.appendChild(unorderedList)
+            previewImageContainer.appendChild(orderedList)
+            paragraphElement.value = ""
+        }
+    </script>
+</body>
+
+</html>

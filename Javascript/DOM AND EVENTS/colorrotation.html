@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #swagkid {  
+           border: 2px solid black; 
+           height: 100px;
+           width: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div onclick="abc()" id="swagkid"></div>
+    <script>
+        var arr = ['red', 'yellow', 'green', 'white', 'blue'];
+        var MAMABRO = 0;
+
+        function abc() {
+            var k = document.getElementById('swagkid');
+            k.style.backgroundColor = arr[MAMABRO];
+            MAMABRO++
+            if (MAMABRO == arr.length) {
+                MAMABRO = 0
+            }
+        }
+    </script>
+</body>
+</html>

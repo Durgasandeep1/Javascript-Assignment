@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sen = 'sandeep';
+        var smallestunicode = sen.charCodeAt(0);
+
+        for (var i = 1; i < sen.length; i++) {
+            var unicode = sen.charCodeAt(i);
+            
+            if (unicode < smallestunicode) {
+                smallestunicode = unicode;
+            }
+        }
+
+        console.log(smallestunicode);
+    </script>
+</body>
+</html>

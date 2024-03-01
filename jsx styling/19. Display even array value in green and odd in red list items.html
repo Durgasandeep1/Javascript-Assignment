@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="d3"></div>
+    <script type="text/babel">
+        var number  = [20,30,4,2,4,6,,4,2,4,53,4,2,3,5,5,344,6,534,32,576865,6,547,56,67,65,754,67,65,756,7,56,47,7]
+
+        var vh1 = <div>
+            {
+                number.map((a)=> {
+                    return <li style={a%2 == 0  ? {color:"green"}:{color:"red"}}>{a}</li>
+                })
+            }
+            
+            </div>    
+        ReactDOM.render(vh1, document.getElementById("d3"));
+    </script>
+</body>
+</html>

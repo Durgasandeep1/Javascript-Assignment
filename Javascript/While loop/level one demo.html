@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        firstNumber = 1
+        secondNumber = 10
+        sum = 0
+        for (i = 1; i <= 10; i++) {
+            sum += i;
+            var resultOfProducts = i * sum;
+            console.log(resultOfProducts);
+            if (resultOfProducts % 2 == 0){
+                console.log('is a even number' + `${resultOfProducts}`);
+            }
+            else {
+                console.log('is a odd number' + `${resultOfProducts}`);
+            }
+        }
+        console.log(resultOfProducts);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+
+  <div id="d3"></div>
+
+  <script type="text/babel">
+    function abc(e) {
+     var k =  document.getElementById('dh')
+     k.innerHTML = e.target.value;
+     console.log(k.innerHTML)
+    if (k.innerHTML == "India") {
+        document.getElementById("imgs").src = "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png"
+    } else {
+        document.getElementById("imgs").src = "https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
+
+    }
+    }
+    function clearText() {
+      document.getElementById('dh').innerHTML = '';
+      document.getElementById('dd').value = '';
+    }
+    var jh1 = <div>
+      <input name='crty' type="radio" value="India" onChange={abc} />IND
+      <input name='crty' type="radio" value="United State of America" onChange={abc} />USA
+      <h1 id='dh'></h1>
+      <img id="imgs" src="" alt=""/>
+    </div>
+    ReactDOM.render(jh1, document.getElementById("d3"))
+
+
+  </script>
+</body>
+
+</html>

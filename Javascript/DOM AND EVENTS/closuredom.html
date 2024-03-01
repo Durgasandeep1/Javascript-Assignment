@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="thd"></div>
+    <script>
+        
+            var a = ["s","a","n",'d','e','e','p']
+        
+        var thd = document.getElementById("thd")
+        for(let i = 0; i <= a.length-1; i++) {
+            var btn = document.createElement("button")
+            btn.innerHTML = a[i]
+            btn.onclick = function() {
+                console.log(alert(a[i]))
+            }
+            thd.appendChild(btn)
+        }
+    </script>
+</body>
+
+</html>

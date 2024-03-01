@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        #centeredDivContainer {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            overflow: hidden; /* Ensure the container hides overflow content */
+        }
+    </style>
+</head>
+
+<body>  
+    <div id="centeredDivContainer" onclick="abc()"></div>
+
+    <script>
+        var arrayOfImg = ["https://wallpapercave.com/wp/wp1827530.jpg", "https://wallpapercave.com/wp/wp1827540.jpg", "https://wallpapercave.com/wp/wp1827563.jpg"]
+        var imagePreview = document.getElementById("centeredDivContainer")
+        var currentIndex = 0;
+
+        function abc() {
+            imagePreview.innerHTML = "";
+
+            var createImgElement = document.createElement("img");
+            createImgElement.src = arrayOfImg[currentIndex];
+            imagePreview.appendChild(createImgElement);
+
+            currentIndex = (currentIndex + 1) % arrayOfImg.length;
+        }
+    </script>
+</html>

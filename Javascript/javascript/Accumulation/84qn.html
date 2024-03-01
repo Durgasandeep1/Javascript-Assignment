@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var number = 1237456;
+        var tempnum = number;
+        count = 0
+        gr = 0;
+        while (tempnum > 0) {
+            var digit = tempnum % 10
+            if (digit > count) {
+                count = digit
+            }
+            tempnum = parseInt(tempnum / 10);
+        }
+        console.log(count)
+    </script>
+</body>
+</html>

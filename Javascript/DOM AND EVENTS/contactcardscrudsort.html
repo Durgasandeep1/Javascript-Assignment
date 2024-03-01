@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="border: 2;" id="aaa"></div>
+    <button onclick="a()">red</button>
+    <button onclick="b()">Green</button>
+    <button onclick="c()">Yellow</button>   
+    <button onclick="d()">Blue</button>
+
+
+    <script>
+        var q = document.getElementById('aaa') 
+        function  a() {
+            q.style.backgroundColor = "red"
+            
+        }
+
+        function  b() {
+            q.style.backgroundColor = "green"
+            
+        }
+
+        function  c() {
+            q.style.backgroundColor = "yellow"
+            
+        }
+
+        function  d() {
+            q.style.backgroundColor = "blue"
+            
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Resume data
+        const data = {
+            name: "Durga Sandeep Vasarla",
+            address: "Gudapalli, Malikipuram, 533254",
+            email: "vdurgasandeep@gmail.com",
+            phone: "123-456-7890",
+            objective: "An enthusiastic and dedicated professional with a strong commitment to a career in technology, coupled with a profound passion for healthcare. Eager to leverage skills in Python, C, Java, HTML, CSS, JavaScript, SQL, Linux, and Windows to contribute to innovative solutions. Seeking a challenging position where I can collaborate across teams, deliver optimal user experiences, and continually learn and adapt to new technologies.",
+            education: [
+                {
+                    degree: "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
+                    institution: "Bonam Venkata Chalamayya Engineering College, Allavaram, Andhra Pradesh",
+                    completion: "2022",
+                },
+                {
+                    degree: "Intermediate (Class XII - MPC)",
+                    institution: "Sri Mangena Gurraya Junior College, Lakkavaram, Andhra Pradesh",
+                    completion: "May 2018",
+                },
+                {
+                    degree: "High School (Class X)",
+                    institution: "Z P High School, Irusumanda, Andhra Pradesh",
+                    completion: "April 2016",
+                },
+            ],
+            technical_skills: {
+                programming_languages: "Python, C, Java",
+                web_technologies: "HTML, CSS, JavaScript",
+                database: "SQL",
+                operating_systems: "Linux, Windows",
+            },
+            soft_skills: "Public Speaking, Listening, Interpersonal Communication, Decision-making, Teamwork",
+            projects: [
+                {
+                    title: "Malware Detection Using Malconv",
+                    description: "Implemented a malware detection system using the Malconv algorithm, a deep learning-based approach analyzing raw byte sequences of executable files. The project aimed to enhance cybersecurity by leveraging machine learning techniques for accurate identification of malicious software.",
+                    technologies: "Malconv Algorithm, Machine Learning (CNN), Python",
+                    results: "Successfully achieved high sensitivity and specificity in distinguishing between benign and malicious files, showcasing the potential of deep learning for robust malware detection.",
+                },
+                {
+                    title: "Banking Information System",
+                    description: "Developed a comprehensive Banking Information System with a project deadline, streamlining processes related to customer transactions, account management, and financial reporting. The project focused on improving efficiency and security in handling banking operations.",
+                    technologies: "[Specify relevant technologies and tools used in the project]",
+                    results: "Enhanced operational efficiency, accuracy, and security in managing banking information, providing an effective solution for streamlined financial processes.",
+                },
+            ],
+        };
+
+        // Generate resume text
+        const resumeText = `
+**${data.name}**
+
+${data.address} | ${data.email} | ${data.phone}
+
+**Objective**
+
+${data.objective}
+
+**Education**
+
+* <span class="math-inline">\{data\.education\[0\]\.degree\} \(</span>{data.education[0].completion}) from ${data.education[0].institution}
+* <span class="math-inline">\{data\.education\[1\]\.degree\} \(</span>{data.education[1].completion}) from ${data.education[1].institution}
+* <span class="math-inline">\{data\.education\[2\]\.degree\} \(</span>{data.education[2].completion}) from ${data.education[2].institution}
+
+**Technical Skills**
+
+* Programming Languages: ${data.technical_skills.programming_languages}
+* Web Technologies: ${data.technical_skills.web_technologies}
+* Database: ${data.technical_skills.database}
+* Operating Systems: ${data.technical_skills.operating_systems}
+
+**Soft Skills**
+
+* <span class="math-inline">\{data\.soft\_skills\}
+\*\*Projects\*\*
+\* \*\*</span>{data.projects[0].title}**
+ * ${data.projects[0].description}
+ * Technologies Used: ${data.projects[0].technologies}
+ * Results: <span class="math-inline">\{data\.projects\[0\]\.results\}
+\* \*\*</span>{data.projects[1].title}**
+ * ${data.projects[1].description}
+ * Technologies Used: ${data.projects[1].technologies}
+ * Results: ${data.projects[1].results}
+`;
+
+        // Display or use the resume text
+        console.log(resumeText); // To display in the console
+        // Or use
+
+    </script>
+</body>
+
+</html>

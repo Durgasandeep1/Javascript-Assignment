@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="studentForm" onsubmit="event.preventDefault()">
+        <div>
+            <label for="">firstname :</label>
+            <input type="text" name="firstname">
+        </div>
+        <div>
+            <label for="">lastname :</label>
+            <input type="text" name="lastname">
+        </div>
+        <div>
+            <label for="">Age :</label>
+            <input type="text" name="age"> <!-- Corrected the name to "age" -->
+        </div>
+        <button onclick="save()">Save</button> <!-- Added parentheses after "save" -->b
+    </form>
+    <table border="2">
+        <thead>
+            <tr>
+                <th onclick="sortstudents('firstname')">First name </th>
+                <th onclick="sortstudents('lastname')">Last Name</th>
+                <th onclick="sortstudents('age')">Age</th>
+            </tr>
+        </thead>
+        <tbody id="d5"></tbody>
+    </table>
+
+    <script>
+        //Accessing the tbody element by its ID
+        var tbd = document.getElementById("d5");
+        //An array to store students objects
+        var ar = [];
+        //Function to save student informatio when the "save" button is clicked
+        function save() {
+            var studentObj = {
+                firstname: studentForm.firstname.value,
+                lastname: studentForm.lastname.value,
+                age: studentForm.age.value, // Corrected the name to "age"
+            };
+            ar.push(studentObj);
+            genUI(ar);
+        }
+
+        function sortstudents(k) {
+            ar.sort(function (a, b) {
+                if (a[k] > b[k]) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
+            genUI(ar); // Corrected the function name to genUI
+        }
+
+        genUI(ar);
+
+        function genUI(arr) {
+            document.getElementById('d5').innerHTML = '';
+            arr.forEach(function (a) {
+                var srow = document.createElement('tr');
+
+                var ftd = document.createElement('td');
+                ftd.innerHTML = a.firstname;;
+                srow.appendChild(ftd)
+
+                var ltd = document.createElement('td');
+                ltd.innerHTML = a.lastname;;
+                srow.appendChild(ltd)
+
+                var atd = document.createElement('td');
+                atd.innerHTML = a.age;;
+                srow.appendChild(atd)
+                document.getElementById('d5').appendChild(srow)
+            });
+        }
+    </script>
+</body>
+
+</html>

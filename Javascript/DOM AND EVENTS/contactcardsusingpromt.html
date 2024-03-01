@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Cards</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            text-align: center;
+            background-image: url("https://img.freepik.com/free-photo/beautiful-scenery-summit-mount-everest-covered-with-snow-white-clouds_181624-21317.jpg?w=996&t=st=1707113259~exp=1707113859~hmac=c4974d7a8b0ae123a3029d7ba0d1fca51a2428c39df6abc62f1cfc522077d00a");
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        #datacontainer {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #backgroundfilter {
+            width: auto;
+            height: auto;
+            padding: 20px;
+            background: transparent;
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="backgroundfilter">
+        <h1>Add Contact Cards</h1>
+        Name: <input type="text" id="nameid"><br>
+        Number: <input type="number" id="numberid"><br>
+        Email: <input type="email" id="emailid"><br>
+        Enter URL: <input type="url" id="urlid"><br>
+        <div>
+            <button onclick="save()">Add Contact</button>
+        </div>
+        <div style="display: flex; justify-content: center;">
+
+            <div>
+                <button onclick="sortbutton()"><i class="bi bi-sort-alpha-down"></i></button>
+            </div>
+            <div>
+                <button onclick="dessortbutton()"><i class="bi bi-sort-alpha-up-alt"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="datacontainer"></div>
+
+    <script>
+        var nameid = document.getElementById("nameid");
+        var numberid = document.getElementById("numberid");
+        var emailid = document.getElementById("emailid");
+        var urlid = document.getElementById("urlid");
+
+        var ar = [];
+
+        function save() {
+            if (nameid.value && numberid.value && emailid.value && urlid.value) {
+                var objstudent = {
+                    firstname: nameid.value,
+                    number: numberid.value,
+                    email: emailid.value,
+                    url: urlid.value,
+                };
+                ar.push(objstudent);
+                console.log(ar);
+                displaydata();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+
+        function displaydata() {
+            var datacontainer = document.getElementById("datacontainer");
+            datacontainer.innerHTML = "";
+
+            ar.forEach(function (a, index) {
+                var divcontainer = document.createElement("div");
+                divcontainer.style.cssText = "width: 300px; height: auto; border: 1px solid black;";
+
+                var h1 = document.createElement('h3');
+                h1.innerHTML = "Name: " + a.firstname;
+                divcontainer.appendChild(h1);
+
+                var h2 = document.createElement('h3');
+                h2.innerHTML = "Number: " + a.number;
+                divcontainer.appendChild(h2);
+
+                var h3 = document.createElement('h3');
+                h3.innerHTML = "Email: " + a.email;
+                divcontainer.appendChild(h3);
+
+                var img = document.createElement('img');
+                img.src = a.url;
+                img.alt = "Profile Picture";
+                img.style.width = "100px";
+                img.style.borderRadius = "50px";
+                img.style.display = "block";
+                img.style.margin = "10px auto";
+                divcontainer.appendChild(img);
+
+                var delbutton = document.createElement('button');
+                delbutton.innerHTML = "Delete";
+                delbutton.onclick = function () {
+                    deleteContact(index);
+                };
+                divcontainer.appendChild(delbutton);
+
+
+                var econtact = document.createElement('button')
+                econtact.innerHTML = "EDIT"
+                econtact.onclick = function () {
+                    editContact(index);
+                }
+                divcontainer.appendChild(econtact)
+
+                datacontainer.appendChild(divcontainer);
+            });
+        }
+
+        function deleteContact(index) {
+            var confirmation = confirm("Are you sure you want to delete this contact?");
+            if (confirmation) {
+                ar.splice(index, 1);
+                displaydata();
+            }
+        }
+
+        function editContact(index) {
+            var editedName = prompt("Enter edited name:", ar[index].firstname);
+            var editedNumber = prompt("Enter edited number:", ar[index].number);
+            var editedEmail = prompt("Enter edited email:", ar[index].email);
+            var editedUrl = prompt("Enter edited URL:", ar[index].url);
+
+            ar[index].firstname = editedName;
+            ar[index].number = editedNumber;
+            ar[index].email = editedEmail;
+            ar[index].url = editedUrl;
+
+            displaydata();
+        }
+
+        function sortbutton() {
+            ar.sort(function (a, b) {
+                var nameA = a.firstname.toUpperCase();
+                var nameB = b.firstname.toUpperCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            });
+
+            displaydata();
+        }
+
+        function dessortbutton() {
+            ar.sort(function (a, b) {
+                var nameA = a.firstname.toUpperCase();
+                var nameB = b.firstname.toUpperCase();
+                if (nameA < nameB) {
+                    return 1;
+                }
+                if (nameA > nameB) {
+                    return -1;
+                }
+                return 0;
+            });
+
+            displaydata();
+        }
+    </script>
+</body>
+
+</html>

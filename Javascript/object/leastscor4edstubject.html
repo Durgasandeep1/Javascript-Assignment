@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var number = 0;
+        var count = 0;
+
+        var marks = {
+            "maths": 34,
+            "english": 56,
+            "science": 32,
+            "hindi": 75,
+            "social science": 65
+        };
+        var num = marks['maths']
+        for (k in marks) {
+            if (marks[k] < num) {
+                number = marks[k]
+            }
+        }
+        console.log(number);
+    </script>
+</body>
+
+</html>

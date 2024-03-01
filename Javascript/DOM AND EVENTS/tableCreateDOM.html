@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <div id="a"></div>
+    <table border="2">
+        <thead>
+            <th>name</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>city</th>
+            <th>salary</th>
+        </thead>
+        <tbody id="dm">
+
+        </tbody>
+    </table>
+    <img src="" alt="">
+
+    <script>
+
+        //5. Take an array of objects and create a table form it.
+        var persons = [
+            {
+                name: "praveen",
+                age: 36,
+                gender: "male",
+                city: "hyd",
+                salary: 10000
+            },
+            {
+                name: "srikanth",
+                age: 32,
+                gender: "male",
+                city: "vizag",
+                salary: 12000
+            },
+            {
+                name: "renuka",
+                age: 28,
+                gender: "female",
+                city: "ap",
+                salary: 30000
+            }
+        ] //tableform at up
+        for (var i = 0; i <= persons.length - 1; i++) {
+            var newtr = document.createElement("tr")
+
+            var nametd = document.createElement("td")
+            nametd.innerHTML = persons[i].name
+            newtr.appendChild(nametd)
+
+            var agetd = document.createElement("td")
+            agetd.innerHTML = persons[i].age
+            newtr.appendChild(agetd)
+
+            var gendertd = document.createElement("td")
+            gendertd.innerHTML = persons[i].gender
+            newtr.appendChild(gendertd)
+
+            var citytd = document.createElement("td")
+            citytd.innerHTML = persons[i].city
+            newtr.appendChild(citytd)
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = persons[i].salary
+            newtr.appendChild(salarytd)
+
+            document.getElementById("dm").appendChild(newtr)
+            console.log(newtr)
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <table id="tablediv">
+
+        </table>
+    </div>
+    <script>
+        var emp = [
+            {
+                name: 'praveen',
+                age: 36,
+                gender: 'male',
+                salary: 100000,
+                city: 'gachibowli',
+            },
+            {
+                name: 'srikanth',
+                age: 32,
+                gender: 'male',
+                salary: 200000,
+                city: 'Bangalore',
+            },
+            {
+                name: 'pradeep',
+                age: 21,
+                gender: 'male',
+                salary: 250000,
+                city: 'hyb',
+            },
+            {
+                name: 'mounika',
+                age: 20,
+                gender: 'female',
+                salary: 300000,
+                city: 'nalgonda',
+            },
+            {
+                name: 'nikihil',
+                age: 22,
+                gender: 'male',
+                salary: 2000,
+                city: 'guntur',
+            },
+            {
+                name: 'riya',
+                age: 14,
+                gender: 'female',
+                salary: 400000,
+                city: 'indore',
+            }
+        ]
+
+        console.log(emp)
+
+        var div1 = document.getElementById("tablediv");
+
+        for (var i = 0; i < emp.length; i++) {
+            var tr = document.createElement("tr");
+
+            for (var key in emp[i]) {
+                var td = document.createElement('td');
+                td.appendChild(document.createTextNode(emp[i][key]));
+                tr.appendChild(td);
+            }
+
+            div1.appendChild(tr);
+        }
+    </script>
+</body>
+
+</html> -->

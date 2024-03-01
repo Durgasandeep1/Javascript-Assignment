@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #contactForm {
+            padding: 20px;
+            background-color: rgb(185, 109, 109);
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px;
+           
+            width: 500px;
+            margin: auto; 
+            margin-top: 50px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="contactForm">
+        <h3>ADD CONTACTS CARD WITH USING 'CRUD' OPERATION AND SORTING</h3>
+        NAME: <input type="text"  id="inputdata">
+        NUMBER: <input type="number" id="numberdata">
+        EMAIL: <input type="email" id="emaildata">
+        ENTER IMAGE URL: <input type="url" id="urldata">
+        <div style="display: flex; justify-content: center; padding: 10px;"><button onclick="addContactButton()">ADD CONTACT</button></div>
+    </div>
+    <div id="detailsCard"></div>
+    <script>
+        var detailsCard = document.createElement("detailscard");
+
+        function addContactButton() {
+            var inputdata = document.getElementById("inputdata").value;
+            var numberdata = document.getElementById("numberdata").value;
+            var emaildata = document.getElementById("emaildata").value;
+            var urldata = document.getElementById("urldata").value;
+            var ar = [];
+            var obj = {
+                firstname: inputdata,
+                number: numberdata,
+                email: emaildata,
+                url: urldata
+            };
+            ar.push(obj);
+            console.log(obj);
+            displaydata()
+        }
+        function displaydata() {
+
+        }
+
+    </script>
+</body>
+</html>

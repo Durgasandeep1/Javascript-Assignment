@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var number = 0;
+        var count = 0;
+        var marks = {
+            "maths": 34,
+            "english": 56,
+            "science": 32,
+            "hindi": 75,
+            "social science": 65
+        };
+
+        for (var k in marks) {
+            number = marks[k] + number;
+            count = count + 1;
+        }
+        var result = (number / (count * 100)) * 100
+        console.log(parseInt(result) + '%');
+ 
+    </script>
+</body>
+
+</html>

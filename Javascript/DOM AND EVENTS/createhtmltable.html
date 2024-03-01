@@ -1,0 +1,88 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="a"></div>
+        <table border="2">
+            <thead>
+                <th>name</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>city</th>
+                <th>salary</th>
+            </thead>
+            <tbody id="dm">
+
+            </tbody>
+        </table>
+        <img src="" alt="">
+        <script>
+            var persons = [
+                {
+                    name: "praveen",
+                    age: 36,
+                    gender: "male",
+                    city: "hyd",
+                    salary: 10000
+                },
+                {
+                    name: "srikanth",
+                    age: 32,
+                    gender: "male",
+                    city: "vizag",
+                    salary: 12000
+                },
+                {
+                    name: "renuka",
+                    age:20,
+                    gender: "female",
+                    city: "ap",
+                    salary: 30000
+                }
+            ]
+
+            for(var i = 0; i <= persons.length-1;i++) {
+                var newtr= document.createElement('tr')            
+                for (var key in persons[i]) {
+                    var td = document.createElement('td');
+                    td.appendChild(document.createTextNode(persons[i][key]));
+                    newtr.appendChild(td);
+                }
+
+
+
+                // var nametd = document.createElement('td')
+                // nametd.innerHTML=persons[i].name
+                // newtr.appendChild(nametd)
+
+                // var agetd = document.createElement('td')
+                // agetd.innerHTML=persons[i].age
+                // newtr.appendChild(agetd)
+
+                // var gendertd = document.createElement("td")
+                // gendertd.innerHTML=persons[i].gender
+                // newtr.appendChild(gendertd)
+
+                // var citytd = document.createElement('td')
+                // citytd.innerHTML=persons[i].city
+                // newtr.appendChild(citytd)
+
+                // var salarytd = document.createElement("td")
+                // salarytd.innerHTML=persons[i].salary
+                // newtr.appendChild(salarytd)
+
+                
+                var t = document.getElementById('dm')
+                t.appendChild(newtr)
+            }
+
+        </script>
+    </body>
+
+    </html>

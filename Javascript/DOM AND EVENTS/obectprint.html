@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Data</title>
+</head>
+
+<body>
+    <!-- Display all people's data in a table -->
+    <h2>All People</h2>
+    <table id="allPeople" border="2"></table>
+
+
+    <script>
+        var people = [
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+        ];
+
+        function createTable(tableId, data) {
+            var table = document.getElementById(tableId);
+            var thead = document.createElement('thead');
+            var headerRow = document.createElement('tr');
+
+            // Create headers
+            for (var key in data[0]) {
+                var th = document.createElement('th');
+                th.textContent = key;
+                headerRow.appendChild(th);
+            }
+
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            // Create rows
+            for (var i = 0; i < data.length; i++) {
+                var row = document.createElement('tr');
+                for (var key in data[i]) {
+                    var cell = document.createElement('td');
+                    cell.textContent = data[i][key];
+                    row.appendChild(cell);
+                }
+                table.appendChild(row);
+            }
+        }
+
+        // Display all people
+        createTable("allPeople", people);
+
+        
+    </script>
+</body>
+
+</html>

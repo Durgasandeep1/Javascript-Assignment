@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Choose your own adventure </title>
+    <meta charset="utf-8">
+    <script src="choose1.js"></script>
+    <link type="text/css" rel="stylesheet" href="choose1.css" />
+</head>
+
+<body>
+    <p> What do you do? </p>
+    <input type="text" id="decision" name="decision" onkeydown="if(event.keyCode === 13) confirm()" />
+    </p>
+    <script>
+        function confirm() {
+            var begin = document.getElementById("decision");
+            if (begin === "yes") {
+                console.log("Success!");
+            }
+            else {
+                console.log("Failure");
+            }
+        }
+    </script>
+</body>
+
+</html>

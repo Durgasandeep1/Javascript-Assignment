@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="divul" ></ul>
+    <script>
+        var students = [
+            {
+                name: 'jaya',
+                gender: 'female',
+                place: 'gachibowli',
+            },
+            {
+                name: 'dasu',
+                gender: 'male',
+                place: 'kphb'
+            },
+            {
+                name: 'swati',
+                gender: 'female',
+                place: 'pune'
+            },
+            {
+                name: 'pallavi',
+                gender: 'female',
+                place: 'assam'
+            },
+            {
+                name: 'kiran',
+                gender: 'male',
+                place: 'kondapur'
+            },
+            {
+                name: 'thirumala',
+                gender: 'male',
+                place: 'madhapur'
+            },
+            {
+                name: 'priya',
+                gender: 'female',
+                place: 'hitech'
+            },
+        ]
+
+        var divul = document.getElementById("divul");
+
+        for (var i = 0; i < students.length; i++) {
+            var li = document.createElement('li');
+            li.innerHTML = students[i].name;
+
+            var ul = document.createElement('ul');
+            
+            var x = document.createElement('li');
+            x.innerHTML = students[i].gender;
+            
+            var y = document.createElement('li');
+            y.innerHTML = students[i].place;
+
+            ul.appendChild(x);
+            ul.appendChild(y);
+
+            li.appendChild(ul);
+            divul.appendChild(li);
+            if(students[i].gender == 'female') {
+                li.style.backgroundColor = "pink"
+            }
+            else{
+                li.style.backgroundColor= 'blue'
+            }
+        }
+    </script>
+</body>
+
+</html>

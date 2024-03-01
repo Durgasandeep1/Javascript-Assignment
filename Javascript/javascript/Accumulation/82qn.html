@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 20402034;
+        var tempnum = num;
+        var resultnum = 0;
+
+        // Remove trailing zeros
+        while (num > 0) {
+            let digit = num % 10;
+            if (digit !== 0) {
+                resultnum = resultnum * 10 + digit;
+            }
+            num = parseInt(num / 10);
+        }
+
+        console.log("Original Number:", tempnum);
+        console.log("Number without trailing zeros:", resultnum);
+
+        var reversedNumber = 0;
+
+        // Reverse the number
+        while (resultnum > 0) {
+            reversedNumber = reversedNumber * 10 + (resultnum % 10);
+            resultnum = (resultnum - resultnum % 10) / 10;
+        }
+
+        console.log("Reversed Number:", reversedNumber);
+
+    </script>
+</body>
+
+</html>

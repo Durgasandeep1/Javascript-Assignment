@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="one()">Unordered List</button>
+    <button onclick="two()">Different Bullets in UL</button>
+    <button onclick="three()">Ordered LISt</button>
+    <button onclick="four()">Simple Ordered LISt</button>
+    <button onclick="five()">HTML definition</button>
+    <button onclick="six()">HTML list n list</button>
+    <button onclick="seven()">HTM cooking School</button>
+
+
+
+    <div id="firstdiv" hidden>
+        <ul>
+            <li>Brownie</li>
+            <li>Cake</li>
+            <li>Donut</li>
+            <li>Cheesecake</li>
+        </ul>
+    </div>
+
+    <div id="seconddiv" hidden>
+        <ul style="list-style-type:circle">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <ul style="list-style-type: armenian;">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <ul style="list-style-type:disc">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <ul style="list-style-type:square">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+    </div>
+
+    <div id="thirddiv" hidden>
+        <ol>
+            <li>Sandeep</li>
+            <li>Satya</li>
+            <li>Karim</li>
+            <li>Kavya</li>
+            <li>Maha</li>
+            <li>Sravani</li>
+            <li>Tanuja</li>
+
+        </ol>
+    </div>
+
+
+    <div id="fourdiv" hidden>
+
+
+        <ol style="list-style-type: lower-roman;">
+            <li>India</li>
+            <li>Sri Lanka</li>
+            <li>Japan</li>
+            <li>USA</li>
+            <li>UK</li>
+        </ol>
+        <ol>
+            <li>India</li>
+            <li>Sri Lanka</li>
+            <li>Japan</li>
+            <li>USA</li>
+            <li>UK</li>
+        </ol>
+        <ol style="list-style-type: lower-alpha;">
+            <li>India</li>
+            <li>Sri Lanka</li>
+            <li>Japan</li>
+            <li>USA</li>
+            <li>UK</li>
+        </ol>
+    </div>
+
+
+    <div id="fivediv" hidden>
+
+        <h2>SGML</h2>
+        <blockquote>The Standard Generalized Markup Language</blockquote>
+        <h2>HTML</h2>
+        <blockquote>The Hypertext Markup Language</blockquote>
+        <blockquote>The markup Language you use to create Web pages.</blockquote>
+        <h2>XML</h2>
+        <blockquote>The Extensible Markup Language</blockquote>
+    </div>
+
+
+
+    <div id="sixdiv" hidden>
+        <p>List of Indian States with their capital</p>
+        <ol>
+            <li>Delhi<ul>
+                    <li>NewDelhi</li>
+                </ul>
+            </li>
+            <li>Haryana<ul>
+                    <li>Chandigar</li>
+                </ul>
+            </li>
+            <li>Gujaratul <ul>
+                    <li>Gandhinagar</li>
+                </ul>
+            </li>
+            <li>Rajatham <ul>
+                    <li>Jaipur</li>
+                </ul>
+            </li>
+            <li>Maharastra <ul>
+                    <li>Mumbai</li>
+                </ul>
+            </li>
+            <li>Uttar Pardesh <ul>
+                    <li>Lucknow</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+
+    <div id="sevendiv" hidden>
+        <h1>HTMl Cooking School</h1>
+        <h2>Recipes</h2>
+        <p>Since this is an HTML tutorial, all limks go to the sponge recipe, Just thought I'd warn you.</p>
+        <ul>
+            <li>cakes</li>
+            <ul>
+                <li><a href="">Plain Sponge</li>
+                <li><a href="">Chocolate Cake</a></li>
+                <li><a href="">Apple Tea Cake</a></li>
+            </ul>
+        </ul>
+        <ul>
+            <li>Biscuits</li>
+            <ul>
+                <li><a href="">Plain Sponge</li>
+                <li><a href="">Chocolate Cake</a></li>
+                <li><a href="">Apple Tea Cake</a></li>
+            </ul>
+        </ul>
+        <ul>
+            <li>Breads/Quickbreads</li>
+            <ul>
+                <li><a href="">Plain Sponge</li>
+                <li><a href="">Chocolate Cake</a></li>
+                <li><a href="">Apple Tea Cake</a></li>
+            </ul>
+        </ul>
+
+
+        <h2>Nesting Lists</h2>
+        <ol style="list-style-type: lower-roman">
+            <li>items <ul>
+                    <li>Sub items 1</li>
+                    <li>subitems 2</li>
+                    <ul style="list-style: lower-alpha;">
+                        <li>subitem 1</li>
+                        <li>sub item 2</li>
+                    </ul>
+                </ul>
+            </li>
+            <li>items <ul>
+                    <li>Sub items 1</li>
+                    <li>subitems 2</li>
+                    <ul style="list-style: square">
+                        <li>subitem 1</li>
+                        <li>sub item 2</li>
+                    </ul>
+                </ul>
+            </li>
+            <li>Items 3</li>
+            <div style="border: 2px solid grey;">
+                <ul style="list-style: circle; color: black;">
+                    <li>Fruit <ul>
+                            <li>Bananas</li>
+                            <li>Apples <ul>
+                                    <li>Green </li>
+                                    <li>Red</li>
+                                </ul>
+                                <li>Pears</li>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Vegetables</li>
+                    <li>Meat</li>
+                </ul>
+            </div>
+        </ol>
+        <li style="list-style: none;">HTML Lists</li>
+
+
+        <li style="list-style: none;"> <h3>List of students</h3></li>
+
+        <ol start="10"><b><li style="color: red;">John</li>
+        <li style="color: green;">Harris</li>
+        <li style="color: blue;">Plunket</li></b></ol>
+    </div>
+
+
+
+    <script>
+        function one() {
+            var x = document.getElementById("firstdiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function two() {
+            var x = document.getElementById("seconddiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function three() {
+            var x = document.getElementById("thirddiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function four() {
+            var x = document.getElementById("fourdiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+
+
+        function five() {
+            var x = document.getElementById("fivediv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function six() {
+            var x = document.getElementById("sixdiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function seven() {
+            var x = document.getElementById("sevendiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
